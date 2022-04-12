@@ -1392,7 +1392,7 @@
               and the expansion appears within double quotes, each key expands
               to a separate word.
 
-####   ${#parameter}
+####   ${\#parameter}
               The length in characters of the value of  parameter  is  substi-
               tuted.   If  parameter  is  * or @, the value substituted is the
               number of positional parameters.  If parameter is an array  name
@@ -1979,83 +1979,84 @@
        bolic links and operate on the target of the link, rather than the link
        itself.
 
-       -a file
+###    -a file
               True if file exists.
-       -b file
+###    -b file
               True if file exists and is a block special file.
-       -c file
+###    -c file
               True if file exists and is a character special file.
-       -d file
+###    -d file
               True if file exists and is a directory.
-       -e file
+###    -e file
               True if file exists.
-       -f file
+###    -f file
               True if file exists and is a regular file.
-       -g file
+###    -g file
               True if file exists and is set-group-id.
-       -h file
+###    -h file
               True if file exists and is a symbolic link.
-       -k file
+###    -k file
               True if file exists and its ``sticky'' bit is set.
-       -p file
+###    -p file
               True if file exists and is a named pipe (FIFO).
-       -r file
+###    -r file
               True if file exists and is readable.
-       -s file
+###    -s file
               True if file exists and has a size greater than zero.
-       -t fd  True if file descriptor fd is open and refers to a terminal.
-       -u file
+###    -t fd
+              True if file descriptor fd is open and refers to a terminal.
+###    -u file
               True if file exists and its set-user-id bit is set.
-       -w file
+###    -w file
               True if file exists and is writable.
-       -x file
+###    -x file
               True if file exists and is executable.
-       -O file
+###    -O file
               True if file exists and is owned by the effective user id.
-       -G file
+###    -G file
               True if file exists and is owned by the effective group id.
-       -L file
+###    -L file
               True if file exists and is a symbolic link.
-       -S file
+###    -S file
               True if file exists and is a socket.
-       -N file
+###    -N file
               True  if  file  exists  and  has been modified since it was last
               read.
-       file1 -nt file2
+###    file1 -nt file2
               True if file1 is newer (according  to  modification  date)  than
               file2, or if file1 exists and file2 does not.
-       file1 -ot file2
+###    file1 -ot file2
               True  if file1 is older than file2, or if file2 exists and file1
               does not.
-       file1 -ef file2
+###    file1 -ef file2
               True if file1 and file2 refer to the same device and inode  num-
               bers.
-       -o optname
+###    -o optname
               True  if  shell  option  optname  is  enabled.   See the list of
               options under the description  of  the  -o  option  to  the  set
               builtin below.
-       -z string
+###    -z string
               True if the length of string is zero.
-       string
-       -n string
+###    string
+###    -n string
               True if the length of string is non-zero.
 
-       string1 == string2
+###    string1 == string2
               True if the strings are equal.  = may be used in place of == for
               strict POSIX compliance.
 
-       string1 != string2
+###    string1 != string2
               True if the strings are not equal.
 
-       string1 < string2
+###    string1 < string2
               True if string1 sorts before string2  lexicographically  in  the
               current locale.
 
-       string1 > string2
+###    string1 > string2
               True  if  string1  sorts  after string2 lexicographically in the
               current locale.
 
-       arg1 OP arg2
+###    arg1 OP arg2
               OP is one of -eq, -ne, -lt, -le, -gt, or -ge.  These  arithmetic
               binary  operators return true if arg1 is equal to, not equal to,
               less than, less than or equal to, greater than, or greater  than
@@ -3404,13 +3405,13 @@
        as accepting options preceded by - accepts -- to signify the end of the
        options.  For example, the :, true, false, and  test  builtins  do  not
        accept options.
-####   : [arguments]
+###    : [arguments]
               No  effect;  the command does nothing beyond expanding arguments
               and performing any specified redirections.  A zero exit code  is
               returned.
 
-####   .  filename [arguments]
-####   source filename [arguments]
+###    .  filename [arguments]
+###    source filename [arguments]
               Read  and  execute  commands  from filename in the current shell
               environment and return the exit status of the last command  exe-
               cuted from filename.  If filename does not contain a slash, file
@@ -3426,7 +3427,7 @@
               commands  are  executed),  and false if filename is not found or
               cannot be read.
 
-####   alias [-p] [name[=value] ...]
+###    alias [-p] [name[=value] ...]
               Alias with no arguments or with the -p option prints the list of
               aliases  in  the form alias name=value on standard output.  When
               arguments are supplied, an alias is defined for each name  whose
@@ -3437,7 +3438,7 @@
               returns  true unless a name is given for which no alias has been
               defined.
 
-####   bg [jobspec ...]
+###    bg [jobspec ...]
               Resume each suspended job jobspec in the background,  as  if  it
               had been started with &.  If jobspec is not present, the shell's
               notion of the current job is used.  bg jobspec returns 0  unless
@@ -3445,12 +3446,12 @@
               enabled, any specified jobspec was  not  found  or  was  started
               without job control.
 
-####   bind [-m keymap] [-lpsvPSV]
-####   bind [-m keymap] [-q function] [-u function] [-r keyseq]
-####   bind [-m keymap] -f filename
-####   bind [-m keymap] -x keyseq:shell-command
-####   bind [-m keymap] keyseq:function-name
-####   bind readline-command
+###    bind [-m keymap] [-lpsvPSV]
+###    bind [-m keymap] [-q function] [-u function] [-r keyseq]
+###    bind [-m keymap] -f filename
+###    bind [-m keymap] -x keyseq:shell-command
+###    bind [-m keymap] keyseq:function-name
+###    bind readline-command
               Display  current  readline key and function bindings, bind a key
               sequence to a readline function or  macro,  or  set  a  readline
               variable.   Each  non-option  argument  is a command as it would
@@ -3490,14 +3491,14 @@
               The return value is 0 unless an unrecognized option is given  or
               an error occurred.
 
-####   break [n]
+###    break [n]
               Exit  from  within a for, while, until, or select loop.  If n is
               specified, break n levels.  n must be >= 1.   If  n  is  greater
               than  the  number  of  enclosing  loops, all enclosing loops are
               exited.  The return value is 0 unless the shell is not executing
               a loop when break is executed.
 
-####   builtin shell-builtin [arguments]
+###    builtin shell-builtin [arguments]
               Execute  the  specified shell builtin, passing it arguments, and
               return its exit status.  This is useful when defining a function
               whose  name  is the same as a shell builtin, retaining the func-
@@ -3505,7 +3506,7 @@
               commonly  redefined  this  way.   The  return status is false if
               shell-builtin is not a shell builtin command.
 
-####   cd [-L|-P] [dir]
+###    cd [-L|-P] [dir]
               Change the current directory to dir.  The variable HOME  is  the
               default  dir.   The  variable CDPATH defines the search path for
               the directory containing dir.  Alternative  directory  names  in
@@ -3522,7 +3523,7 @@
               output.   The return value is true if the directory was success-
               fully changed; false otherwise.
 
-####   caller [expr]
+###    caller [expr]
               Returns the context of any active subroutine call (a shell func-
               tion  or a script executed with the . or source builtins.  With-
               out expr, caller displays the line number and source filename of
@@ -3535,7 +3536,7 @@
               routine  call or expr does not correspond to a valid position in
               the call stack.
 
-####   command [-pVv] command [arg ...]
+###    command [-pVv] command [arg ...]
               Run command with args  suppressing  the  normal  shell  function
               lookup.  Only builtin commands or commands found in the PATH are
               executed.  If the -p option is given, the search for command  is
@@ -3550,7 +3551,7 @@
               not  be found, the exit status is 127.  Otherwise, the exit sta-
               tus of the command builtin is the exit status of command.
 
-####   compgen [option] [word]
+###    compgen [option] [word]
               Generate possible completion matches for word according  to  the
               options,  which  may  be  any  option  accepted  by the complete
               builtin with the exception of -p and -r, and write  the  matches
@@ -3566,8 +3567,8 @@
               The return value is true unless an invalid option  is  supplied,
               or no matches were generated.
 
-####   complete  [-abcdefgjksuv] [-o comp-option] [-A action] [-G globpat] [-W wordlist] [-P prefix] [-S suffix] [-X filterpat] [-F function] [-C command] name [name ...]
-####   complete -pr [name ...]
+###    complete  [-abcdefgjksuv] [-o comp-option] [-A action] [-G globpat] [-W wordlist] [-P prefix] [-S suffix] [-X filterpat] [-F function] [-C command] name [name ...]
+###    complete -pr [name ...]
               Specify  how arguments to each name should be completed.  If the
               -p option is supplied, or if no options are  supplied,  existing
               completion  specifications are printed in a way that allows them
@@ -3688,7 +3689,7 @@
               for a name for which no specification exists, or an error occurs
               adding a completion specification.
 
-####   continue [n]
+###    continue [n]
               Resume the next iteration of the enclosing for, while, until, or
               select loop.  If n is specified, resume  at  the  nth  enclosing
               loop.   n  must  be  >=  1.   If n is greater than the number of
@@ -3696,8 +3697,8 @@
               loop) is resumed.  The return value is 0 unless the shell is not
               executing a loop when continue is executed.
 
-####   declare [-afFirtx] [-p] [name[=value] ...]
-####   typeset [-afFirtx] [-p] [name[=value] ...]
+###    declare [-afFirtx] [-p] [name[=value] ...]
+###    typeset [-afFirtx] [-p] [name[=value] ...]
               Declare variables and/or give them attributes.  If no names  are
               given  then display the values of variables.  The -p option will
               display the attributes and values of  each  name.   When  -p  is
@@ -3738,7 +3739,7 @@
               off array status for an array variable, or an attempt is made to
               display a non-existent function with -f.
 
-####   dirs [-clpv] [+n] [-n]
+###    dirs [-clpv] [+n] [-n]
               Without options,  displays  the  list  of  currently  remembered
               directories.   The  default  display  is  on  a single line with
               directory names separated by spaces.  Directories are  added  to
@@ -3761,7 +3762,7 @@
               The  return value is 0 unless an invalid option is supplied or n
               indexes beyond the end of the directory stack.
 
-####   disown [-ar] [-h] [jobspec ...]
+###    disown [-ar] [-h] [jobspec ...]
               Without options, each jobspec  is  removed  from  the  table  of
               active  jobs.   If  the  -h option is given, each jobspec is not
               removed from the table, but is marked so that SIGHUP is not sent
@@ -3772,7 +3773,7 @@
               spec  argument  restricts operation to running jobs.  The return
               value is 0 unless a jobspec does not specify a valid job.
 
-####   echo [-neE] [arg ...]
+###    echo [-neE] [arg ...]
               Output the args, separated by spaces,  followed  by  a  newline.
               The return status is always 0.  If -n is specified, the trailing
               newline is suppressed.  If the -e option is  given,  interpreta-
@@ -3798,7 +3799,7 @@
               \xHH   the eight-bit character whose value  is  the  hexadecimal
                      value HH (one or two hex digits)
 
-####   enable [-adnps] [-f filename] [name ...]
+###    enable [-adnps] [-f filename] [name ...]
               Enable  and disable builtin shell commands.  Disabling a builtin
               allows a disk command which has the same name as a shell builtin
               to  be  executed without specifying a full pathname, even though
@@ -3819,13 +3820,13 @@
               value is 0 unless a name is not a shell builtin or there  is  an
               error loading a new builtin from a shared object.
 
-####   eval [arg ...]
+###    eval [arg ...]
               The  args  are read and concatenated together into a single com-
               mand.  This command is then read and executed by the shell,  and
               its  exit status is returned as the value of eval.  If there are
               no args, or only null arguments, eval returns 0.
 
-####   exec [-cl] [-a name] [command [arguments]]
+###    exec [-cl] [-a name] [command [arguments]]
               If command is specified, it replaces the shell.  No new  process
               is  created.  The arguments become the arguments to command.  If
               the -l option is supplied, the shell places a dash at the begin-
@@ -3840,13 +3841,13 @@
               take  effect  in  the current shell, and the return status is 0.
               If there is a redirection error, the return status is 1.
 
-####   exit [n]
+###    exit [n]
               Cause the shell to exit with a status of n.  If  n  is  omitted,
               the exit status is that of the last command executed.  A trap on
               EXIT is executed before the shell terminates.
 
-####   export [-fn] [name[=word]] ...
-####   export -p
+###    export [-fn] [name[=word]] ...
+###    export -p
               The supplied names are marked for automatic export to the  envi-
               ronment  of subsequently executed commands.  If the -f option is
               given, the names refer to functions.  If no names are given,  or
@@ -3859,8 +3860,8 @@
               variable name, or -f is supplied with a name that is not a func-
               tion.
 
-####   fc [-e ename] [-nlr] [first] [last]
-####   fc -s [pat=rep] [cmd]
+###    fc [-e ename] [-nlr] [first] [last]
+###    fc -s [pat=rep] [cmd]
               Fix Command.  In the first form, a range of commands from  first
               to  last  is selected from the history list.  First and last may
               be specified as a string (to locate the last  command  beginning
@@ -3896,7 +3897,7 @@
               cuted, unless cmd does not specify  a  valid  history  line,  in
               which case fc returns failure.
 
-####   fg [jobspec]
+###    fg [jobspec]
               Resume  jobspec  in the foreground, and make it the current job.
               If jobspec is not present, the shell's notion of the current job
               is  used.   The  return value is that of the command placed into
@@ -3905,7 +3906,7 @@
               ify a valid job or jobspec specifies  a  job  that  was  started
               without job control.
 
-####   getopts optstring name [args]
+###    getopts optstring name [args]
               getopts  is used by shell procedures to parse positional parame-
               ters.  optstring contains the option  characters  to  be  recog-
               nized;  if  a  character  is  followed by a colon, the option is
@@ -3951,7 +3952,7 @@
               found.  It returns false if the end of options is encountered or
               an error occurs.
 
-####   hash [-lr] [-p filename] [-dt] [name]
+###    hash [-lr] [-p filename] [-dt] [name]
               For  each  name, the full file name of the command is determined
               by searching the directories in $PATH and remembered.  If the -p
               option is supplied, no path search is performed, and filename is
@@ -3967,7 +3968,7 @@
               printed.   The  return status is true unless a name is not found
               or an invalid option is supplied.
 
-####   help [-s] [pattern]
+###    help [-s] [pattern]
               Display helpful information about builtin commands.  If  pattern
               is  specified, help gives detailed help on all commands matching
               pattern; otherwise help for all the builtins and  shell  control
@@ -3975,12 +3976,12 @@
               displayed to a short usage synopsis.  The  return  status  is  0
               unless no command matches pattern.
 
-####   history [n]
-####   history -c
-####   history -d offset
-####   history -anrw [filename]
-####   history -p arg [arg ...]
-####   history -s arg [arg ...]
+###    history [n]
+###    history -c
+###    history -d offset
+###    history -anrw [filename]
+###    history -p arg [arg ...]
+###    history -s arg [arg ...]
               With no options, display the command history list with line num-
               bers.  Lines listed with a * have been modified.  An argument of
               n  lists only the last n lines.  If the shell variable HISTTIME-
@@ -4020,8 +4021,8 @@
               invalid offset is supplied as an argument to -d, or the  history
               expansion supplied as an argument to -p fails.
 
-####   jobs [-lnprs] [ jobspec ... ]
-####   jobs -x command [ args ... ]
+###    jobs [-lnprs] [ jobspec ... ]
+###    jobs -x command [ args ... ]
               The first form lists the active jobs.  The options have the fol-
               lowing meanings:
               -l     List process IDs in addition to the normal information.
@@ -4040,8 +4041,8 @@
               command or args with the corresponding  process  group  ID,  and
               executes command passing it args, returning its exit status.
 
-####   kill [-s sigspec | -n signum | -sigspec] [pid | jobspec] ...
-####   kill -l [sigspec | exit_status]
+###    kill [-s sigspec | -n signum | -sigspec] [pid | jobspec] ...
+###    kill -l [sigspec | exit_status]
               Send  the  signal  named  by  sigspec or signum to the processes
               named by pid or jobspec.  sigspec is either  a  case-insensitive
               signal  name such as SIGKILL (with or without the SIG prefix) or
@@ -4055,12 +4056,12 @@
               if  at  least  one  signal was successfully sent, or false if an
               error occurs or an invalid option is encountered.
 
-####   let arg [arg ...]
+###    let arg [arg ...]
               Each arg is an arithmetic expression to be evaluated (see ARITH-
               METIC  EVALUATION).  If the last arg evaluates to 0, let returns
               1; 0 is returned otherwise.
 
-####   local [option] [name[=value] ...]
+###    local [option] [name[=value] ...]
               For each argument, a local variable named name is  created,  and
               assigned  value.   The option can be any of the options accepted
               by declare.  When local is used within a function, it causes the
@@ -4071,10 +4072,10 @@
               local  is  used outside a function, an invalid name is supplied,
               or name is a readonly variable.
 
-####   logout 
+###    logout 
               Exit a login shell.
 
-####   popd [-n] [+n] [-n]
+###    popd [-n] [+n] [-n]
               Removes entries from the directory stack.   With  no  arguments,
               removes  the  top directory from the stack, and performs a cd to
               the new top directory.  Arguments, if supplied, have the follow-
@@ -4096,7 +4097,7 @@
               tent directory stack entry is specified, or the directory change
               fails.
 
-####   printf [-v var] format [arguments]
+###    printf [-v var] format [arguments]
               Write  the  formatted arguments to the standard output under the
               control of the format.  The format is a character  string  which
               contains  three  types  of  objects: plain characters, which are
@@ -4120,8 +4121,8 @@
               null  string,  as  appropriate,  had  been supplied.  The return
               value is zero on success, non-zero on failure.
 
-####   pushd [-n] [dir]
-####   pushd [-n] [+n] [-n]
+###    pushd [-n] [dir]
+###    pushd [-n] [+n] [-n]
               Adds a directory to the top of the directory stack,  or  rotates
               the  stack,  making the new top of the stack the current working
               directory.  With no arguments, exchanges the top two directories
@@ -4146,7 +4147,7 @@
               specified,  or the directory change to the specified new current
               directory fails.
 
-####   pwd [-LP]
+###    pwd [-LP]
               Print the absolute pathname of the  current  working  directory.
               The pathname printed contains no symbolic links if the -P option
               is supplied or the -o physical option to the set builtin command
@@ -4155,7 +4156,7 @@
               occurs  while  reading  the  name of the current directory or an
               invalid option is supplied.
 
-####   read [-ers] [-u fd] [-t timeout] [-a aname] [-p prompt] [-n nchars] [-d delim] [name ...]
+###    read [-ers] [-u fd] [-t timeout] [-a aname] [-p prompt] [-n nchars] [-d delim] [name ...]
               One line is read from the  standard  input,  or  from  the  file
               descriptor  fd supplied as an argument to the -u option, and the
               first word is assigned to the first name, the second word to the
@@ -4202,7 +4203,7 @@
               encountered,  read  times  out, or an invalid file descriptor is
               supplied as the argument to -u.
 
-####   readonly [-apf] [name[=word] ...]
+###    readonly [-apf] [name[=word] ...]
               The given names are marked readonly; the values of  these  names
               may  not  be changed by subsequent assignment.  If the -f option
               is supplied, the functions corresponding to  the  names  are  so
@@ -4216,7 +4217,7 @@
               variable name, or -f is supplied with a name that is not a func-
               tion.
 
-####   return [n]
+###    return [n]
               Causes  a function to exit with the return value specified by n.
               If n is omitted, the return status is that of the  last  command
               executed  in the function body.  If used outside a function, but
@@ -4228,7 +4229,7 @@
               status is false.  Any command associated with the RETURN trap is
               executed before execution resumes after the function or  script.
 
-####   set [--abefhkmnptuvxBCHP] [-o option] [arg ...]
+###    set [--abefhkmnptuvxBCHP] [-o option] [arg ...]
               Without  options,  the name and value of each shell variable are
               displayed in a format that can be reused as input for setting or
               resetting the currently-set variables.  Read-only variables can-
@@ -4239,13 +4240,16 @@
               as values for the positional parameters  and  are  assigned,  in
               order, to $1, $2, ...  $n.  Options, if specified, have the fol-
               lowing meanings:
-              -a      Automatically mark variables  and  functions  which  are
+####          -a
+                      Automatically mark variables  and  functions  which  are
                       modified  or  created  for  export to the environment of
                       subsequent commands.
-              -b      Report the status of terminated background jobs  immedi-
+####          -b
+                      Report the status of terminated background jobs  immedi-
                       ately, rather than before the next primary prompt.  This
                       is effective only when job control is enabled.
-              -e      Exit immediately if a simple command (see SHELL  GRAMMAR
+####          -e
+                      Exit immediately if a simple command (see SHELL  GRAMMAR
                       above) exits with a non-zero status.  The shell does not
                       exit if the command that fails is part  of  the  command
                       list  immediately  following  a  while or until keyword,
@@ -4253,22 +4257,27 @@
                       list, or if the command's return value is being inverted
                       via !.  A trap on ERR, if set, is  executed  before  the
                       shell exits.
-              -f      Disable pathname expansion.
-              -h      Remember  the location of commands as they are looked up
+####          -f
+                      Disable pathname expansion.
+####          -h
+                      Remember  the location of commands as they are looked up
                       for execution.  This is enabled by default.
-              -k      All arguments in the form of assignment  statements  are
+####          -k
+                      All arguments in the form of assignment  statements  are
                       placed  in the environment for a command, not just those
                       that precede the command name.
-              -m      Monitor mode.  Job control is enabled.  This  option  is
+####          -m
+                      Monitor mode.  Job control is enabled.  This  option  is
                       on  by  default  for  interactive shells on systems that
                       support it (see JOB  CONTROL  above).   Background  pro-
                       cesses  run  in a separate process group and a line con-
                       taining their exit status is printed upon their  comple-
                       tion.
-              -n      Read commands but do not execute them.  This may be used
+####          -n
+                      Read commands but do not execute them.  This may be used
                       to check a shell script  for  syntax  errors.   This  is
                       ignored by interactive shells.
-              -o option-name
+####          -o option-name
                       The option-name can be one of the following:
                       allexport
                               Same as -a.
@@ -4323,7 +4332,8 @@
                       option-name, a series of set commands  to  recreate  the
                       current  option  settings  is  displayed on the standard
                       output.
-              -p      Turn on privileged mode.  In this  mode,  the  $ENV  and
+####          -p
+                      Turn on privileged mode.  In this  mode,  the  $ENV  and
                       $BASH_ENV  files  are not processed, shell functions are
                       not inherited from the environment,  and  the  SHELLOPTS
                       variable,  if it appears in the environment, is ignored.
@@ -4335,43 +4345,55 @@
                       not reset.  Turning this option off causes the effective
                       user and group ids to be set to the real user and  group
                       ids.
-              -t      Exit after reading and executing one command.
-              -u      Treat unset variables as an error when performing param-
+####          -t
+                      Exit after reading and executing one command.
+####          -u
+                      Treat unset variables as an error when performing param-
                       eter expansion.  If expansion is attempted on  an  unset
                       variable, the shell prints an error message, and, if not
                       interactive, exits with a non-zero status.
-              -v      Print shell input lines as they are read.
-              -x      After expanding each simple command, for  command,  case
+####          -v
+                      Print shell input lines as they are read.
+####          -x
+                      After expanding each simple command, for  command,  case
                       command, select command, or arithmetic for command, dis-
                       play the expanded value of PS4, followed by the  command
                       and its expanded arguments or associated word list.
-              -B      The  shell performs brace expansion (see Brace Expansion
+####          -B
+                      The  shell performs brace expansion (see Brace Expansion
                       above).  This is on by default.
-              -C      If set, bash does not overwrite an  existing  file  with
+####          -C
+                      If set, bash does not overwrite an  existing  file  with
                       the  >,  >&,  and <> redirection operators.  This may be
                       overridden when creating output files by using the redi-
                       rection operator >| instead of >.
-              -E      If set, any trap on ERR is inherited by shell functions,
+####          -E
+                      If set, any trap on ERR is inherited by shell functions,
                       command substitutions, and commands executed in  a  sub-
                       shell  environment.  The ERR trap is normally not inher-
                       ited in such cases.
-              -H      Enable !  style history substitution.  This option is on
+####          -H
+                      Enable !  style history substitution.  This option is on
                       by default when the shell is interactive.
-              -P      If  set,  the  shell does not follow symbolic links when
+####          -P
+                      If  set,  the  shell does not follow symbolic links when
                       executing commands such as cd that  change  the  current
                       working  directory.   It  uses  the  physical  directory
                       structure instead.  By default, bash follows the logical
                       chain  of  directories  when  performing  commands which
                       change the current directory.
-              -T      If set, any traps on DEBUG and RETURN are  inherited  by
+####          -T
+                      If set, any traps on DEBUG and RETURN are  inherited  by
                       shell  functions,  command  substitutions,  and commands
                       executed in  a  subshell  environment.   The  DEBUG  and
                       RETURN traps are normally not inherited in such cases.
-              --      If  no arguments follow this option, then the positional
+####          --
+                      If  no arguments follow this option, then the positional
                       parameters are unset.  Otherwise, the positional parame-
                       ters  are  set  to  the args, even if some of them begin
                       with a -.
-              -       Signal the end of options, cause all remaining  args  to
+####          -
+                      Signal the end of options, cause all remaining  args  to
                       be assigned to the positional parameters.  The -x and -v
                       options are turned off.  If there are no args, the posi-
                       tional parameters remain unchanged.
@@ -4383,7 +4405,7 @@
               return status is always true unless an invalid option is encoun-
               tered.
 
-####   shift [n]
+###    shift [n]
               The positional parameters from n+1 ... are renamed  to  $1  ....
               Parameters  represented  by  the  numbers  $# down to $#-n+1 are
               unset.  n must be a non-negative number less than  or  equal  to
@@ -4392,7 +4414,7 @@
               parameters  are  not changed.  The return status is greater than
               zero if n is greater than $# or less than zero; otherwise 0.
 
-####   shopt [-pqsu] [-o] [optname ...]
+###    shopt [-pqsu] [-o] [optname ...]
               Toggle the values of variables controlling optional shell behav-
               ior.  With no options, or with the -p option, a list of all set-
               table options is displayed, with an indication of whether or not
@@ -4580,14 +4602,14 @@
               xpg_echo
                       If   set,  the  echo  builtin  expands  backslash-escape
                       sequences by default.
-####   suspend [-f]
+###    suspend [-f]
               Suspend the execution of this shell until it receives a  SIGCONT
               signal.   The  -f option says not to complain if this is a login
               shell; just suspend anyway.  The return status is 0  unless  the
               shell is a login shell and -f is not supplied, or if job control
               is not enabled.
-####   test expr
-####   [ expr ]
+###    test expr
+###    [ expr ]
               Return a status of 0 or 1 depending on  the  evaluation  of  the
               conditional  expression expr.  Each operator and operand must be
               a separate argument.  Expressions are composed of the  primaries
@@ -4644,11 +4666,11 @@
                      The  expression  is  parsed  and  evaluated  according to
                      precedence using the rules listed above.
 
-####   times  
+###    times  
               Print the accumulated user and system times for  the  shell  and
               for processes run from the shell.  The return status is 0.
 
-####   trap [-lp] [[arg] sigspec ...]
+###    trap [-lp] [[arg] sigspec ...]
               The  command  arg  is  to  be  read  and executed when the shell
               receives signal(s) sigspec.  If arg is absent (and  there  is  a
               single  sigspec)  or  -,  each  specified signal is reset to its
@@ -4685,7 +4707,7 @@
               created.  The return status is false if any sigspec is  invalid;
               otherwise trap returns true.
 
-####   type [-aftpP] name [name ...]
+###    type [-aftpP] name [name ...]
               With  no options, indicate how each name would be interpreted if
               used as a command name.  If the -t option is used, type prints a
               string  which  is  one  of alias, keyword, function, builtin, or
@@ -4706,7 +4728,7 @@
               tion lookup, as with the command builtin.  type returns true  if
               any of the arguments are found, false if none are found.
 
-####   ulimit [-SHacdefilmnpqrstuvx [limit]]
+###    ulimit [-SHacdefilmnpqrstuvx [limit]]
               Provides  control  over the resources available to the shell and
               to processes started by it, on systems that allow such  control.
               The -H and -S options specify that the hard or soft limit is set
@@ -4752,7 +4774,7 @@
               0 unless an invalid option or argument is supplied, or an  error
               occurs while setting a new limit.
 
-####   umask [-p] [-S] [mode]
+###    umask [-p] [-S] [mode]
               The user file-creation mask is set to mode.  If mode begins with
               a digit, it is interpreted as an octal number; otherwise  it  is
               interpreted  as a symbolic mode mask similar to that accepted by
@@ -4764,12 +4786,12 @@
               was  successfully  changed  or if no mode argument was supplied,
               and false otherwise.
 
-####   unalias [-a] [name ...]
+###    unalias [-a] [name ...]
               Remove each name from the list of defined  aliases.   If  -a  is
               supplied,  all  alias definitions are removed.  The return value
               is true unless a supplied name is not a defined alias.
 
-####   unset [-fv] [name ...]
+###    unset [-fv] [name ...]
               For each name, remove the corresponding  variable  or  function.
               If no options are supplied, or the -v option is given, each name
               refers to a shell variable.   Read-only  variables  may  not  be
@@ -4781,7 +4803,7 @@
               properties, even if they are subsequently reset.  The exit  sta-
               tus is true unless a name is readonly.
 
-####   wait [n ...]
+###    wait [n ...]
               Wait  for each specified process and return its termination sta-
               tus.  Each n may be a process ID or a job  specification;  if  a
               job  spec  is  given,  all  processes in that job's pipeline are
